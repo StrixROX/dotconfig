@@ -14,6 +14,8 @@ function downloadWallpapers {
     outputDir=$input
   fi
 
+  outputDir="${outputDir/'~'/$HOME}"
+
   if [ ! -d $outputDir ]; then
     read -p "  Target directory not found. Create directory?(Y/n) " choice
     if [[ $choice == [yY] || $choice == "" ]]; then
