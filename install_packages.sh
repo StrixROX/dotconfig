@@ -8,4 +8,6 @@ function installPackages {
       echo "No package-list file for: Fedora"
     fi
   fi
+
+  echo -e "  ${GREEN}done${RESET}"
 }
