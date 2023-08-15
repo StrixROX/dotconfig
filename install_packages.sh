@@ -50,7 +50,7 @@ function installPackages {
           echo -e "  ${GREEN}done${RESET}"
 
           echo "Installing packages with yay"
-          sudo yay -S $(cat ./package-lists/package-list.arch)
+          sudo yay -S $(cat ./package-lists/package-list.arch | sed "/yay/c\ " $1)
         else
           echo "Installing packages with pacman"
           sudo pacman -S $(cat ./package-lists/package-list.arch)
