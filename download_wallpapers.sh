@@ -1,4 +1,12 @@
+# COLORS (https://colors.sh)
+BOLD="\033[1m"
+YELLOW="\033[38;5;11m"
+GREEN="\033[38;5;40m"
+RESET="\033[0m"
+
 function downloadWallpapers {
+  echo -e "${YELLOW}Wallpaper download${RESET}"
+
   outputDir="./Wallpapers"
   read -p "  Specify target directory for downloaded wallpapers:(${outputDir}) " input
 
