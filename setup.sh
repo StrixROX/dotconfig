@@ -58,10 +58,12 @@ function copyConfigs {
 }
 
 source ./install_packages.sh
+source ./download_wallpapers.sh
 if [[ $1 && $1 == "--all" ]]; then
   installPackages
   copyBashAliases
   copyConfigs
+  downloadWallpapers
 else
   read -p "> Install packages?(y/N) " c0
   if [[ $c0 == [yY] ]]; then
@@ -77,8 +79,13 @@ else
   if [[ $c2 == [yY] ]]; then
     copyConfigs
   fi
+
+  read -p "> Download wallpapers?(y/N) " c3
+  if [[ $c3 == [yY] ]]; then
+    downloadWallpapers
+  fi
 fi
 
-if [[ $c1 || $c2 ]]; then
+if [[ $c0 || $c1 || $c2 || $c3 ]]; then
   echo -e "\n${BOLD}${GREEN}All set!${RESET}"
 fi
