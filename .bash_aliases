@@ -5,9 +5,9 @@ alias editals="nano ~/.bash_aliases"
 alias loadbash="source ~/.bashrc"
 
 # Bash prompt customization
-CYAN="\[$(tput setaf 51)\]"
-GREEN="\[$(tput setaf 48)\]"
-RESET="\[$(tput setaf sgr0)\]"
+CYAN="\033[038;5;51m"
+GREEN="\033[038;5;40m"
+RESET="\033[0m"
 
 # checks whether the current dir is a part of a git repo
 # if yes, returns the current active branch
