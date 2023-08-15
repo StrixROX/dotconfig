@@ -57,16 +57,23 @@ function copyConfigs {
   fi
 }
 
+source ./install_packages.sh
 if [[ $1 && $1 == "--all" ]]; then
+  installPackages
   copyBashAliases
   copyConfigs
 else
-  read -p "Copy .bash_aliases?(y/N) " c1
+  read -p "> Install packages?(y/N) " c0
+  if [[ $c0 == [yY] ]]; then
+    installPackages
+  fi
+
+  read -p "> Copy .bash_aliases?(y/N) " c1
   if [[ $c1 == [yY] ]]; then
     copyBashAliases
   fi
 
-  read -p "Copy configuration files?(y/N) " c2
+  read -p "> Copy configuration files?(y/N) " c2
   if [[ $c2 == [yY] ]]; then
     copyConfigs
   fi
