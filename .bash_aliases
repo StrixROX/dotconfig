@@ -1,5 +1,6 @@
 alias c="clear"
 alias l="ls"
+alias la="ls -a"
 alias editals="nano ~/.bash_aliases"
 alias loadbash="source ~/.bashrc"
 
