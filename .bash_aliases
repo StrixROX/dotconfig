@@ -1,6 +1,6 @@
 alias c="clear"
-alias l="ls"
-alias la="ls -a"
+alias l="ls --group-directories-first"
+alias la="ls -a --group-directories-first"
 alias editals="nano ~/.bash_aliases"
 alias loadbash="source ~/.bashrc"
 
