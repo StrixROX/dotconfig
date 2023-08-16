@@ -11,7 +11,7 @@ fi
 
 function copyBashAliases {
   if [ -f ./.bash_aliases ]; then
-    echo -e "${YELLOW}.bash_aliases${RESET}"
+    echo -e "\n${YELLOW}.bash_aliases${RESET}"
     if [ ! -f ~/.bash_aliases ]; then
       echo -e "  Copying .bash_aliases > ~/.bash_aliases"
       cat ./.bash_aliases > ~/.bash_aliases
@@ -32,7 +32,7 @@ function copyBashAliases {
 function copyConfigs {
   if [ -f ./kitty/*.conf ]; then
    if [ ! -d ~/.config/kitty ]; then
-      echo "Creating ~/.config/kitty folder..."
+      echo "\nCreating ~/.config/kitty folder..."
       mkdir -p ~/.config/kitty
     fi
 
