@@ -16,6 +16,7 @@ function installPackages {
       read -p "Proceed?(Y/n) " proceed
       if [[ $proceed == [yY] || $proceed == "" ]]; then
         sudo dnf install $(cat ./package-lists/package-list.fedora)
+        echo -e "  ${GREEN}done${RESET}"
       fi
     else
       echo "No package-list file for: Fedora"
@@ -43,11 +44,10 @@ function installPackages {
           echo -e "    ${GREEN}done${RESET}"
 
           read -p "  Remove downloaded binaries, ./yay-bin/?(Y/n) " removebin
-          if [[ $removebin == [yY] ]]; then
-            rm -rf yay-bin
+          if [[ $removebin == [yY] || $removebin == "" ]]; then
+            sudo rm -rf ./yay-bin
             echo -e "    ${GREEN}done${RESET}"
           fi
-          echo -e "  ${GREEN}done${RESET}"
 
           echo "Installing packages with yay"
           sudo yay -S $(cat ./package-lists/package-list.arch | sed "/yay/c\ " $1)
@@ -55,11 +55,26 @@ function installPackages {
           echo "Installing packages with pacman"
           sudo pacman -S $(cat ./package-lists/package-list.arch)
         fi
+
+        echo -e "  ${GREEN}done${RESET}"
+
+        if [ $(ls ./package-lists | grep -E "package-list.+.arch") ]; then
+          echo "Additional packages were found for the following desktop environments:"
+          options=()
+          if [ -f ./package-lists/package-list.gnome.arch ]; then
+            options+="gnome"
+          fi
+          echo "${options[@]}"
+          read -p "\nSelect desktop environment:(leave blank to skip) " de
+          if [[ $de != "" ]]; then
+            echo "\nInstalling extra packages for ${de}"
+            sudo yay -S $(cat ./package-lists/package-list.$de.arch)
+            echo -e "  ${GREEN}done${RESET}"
+          fi
+        fi
       fi
     else
       echo "No package-list file for: Arch"
     fi
   fi
-
-  echo -e "  ${GREEN}done${RESET}"
 }
