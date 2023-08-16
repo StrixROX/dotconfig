@@ -28,7 +28,7 @@ function installPackages {
       if [[ $proceed == [yY] || $proceed == "" ]]; then
         if [[ $(cat ./package-lists/package-list.arch | grep yay) ]]; then
           echo -e "${YELLOW}yay${RESET}"
-          echo -e "  Installing dependency: ${YELLOW}git${RESET}"
+          echo -e "  Installing dependency: git"
           sudo pacman -S git
           echo -e "    ${GREEN}done${RESET}"
 
