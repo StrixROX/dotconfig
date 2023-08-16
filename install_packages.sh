@@ -5,7 +5,7 @@ GREEN="\033[38;5;40m"
 RESET="\033[0m"
 
 function installPackages {
-  echo -e "${YELLOW}Package installation${RESET}"
+  echo -e "\n${YELLOW}Package installation${RESET}"
 
   source /etc/os-release
 
@@ -59,7 +59,7 @@ function installPackages {
         echo -e "  ${GREEN}done${RESET}"
 
         if [ $(ls ./package-lists | grep -E "package-list.+.arch") ]; then
-          echo "Additional packages were found for the following desktop environments:"
+          echo "\nAdditional packages were found for the following desktop environments:"
           options=()
           if [ -f ./package-lists/package-list.gnome.arch ]; then
             options+="gnome"
