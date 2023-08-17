@@ -2,3 +2,11 @@ brave-bin
 gnome-tweaks
 gnome-shell-extensions
 gnome-browser-connector
+gnome-control-center
+gnome-keyring
+nautilus
+evince
+gthumb
+flatpak
+flatpak-builder
+gnome-software
