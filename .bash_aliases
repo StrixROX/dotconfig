@@ -20,7 +20,11 @@ getGitBranch() {
   local branch=$(git branch 2> /dev/null | sed -n '/^[^*]/d;s/*\s*\(.*\)/\1/p')
 
   if [[ -n "$branch" ]]; then
-    echo "⦓ $branch ⦔"
+    if [[ -n "$(git status --porcelain)" ]]; then
+      echo "⦓  $branch* ⦔"
+    else
+      echo "⦓  $branch  ⦔"
+    fi
   fi
 }
 
