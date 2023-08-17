@@ -50,7 +50,7 @@ function installPackages {
           fi
 
           echo "Installing packages with yay"
-          sudo yay -S $(cat ./package-lists/package-list.arch | sed "/yay/c\ " $1)
+          yay -S $(cat ./package-lists/package-list.arch | sed "/yay/c\ " $1)
         else
           echo "Installing packages with pacman"
           sudo pacman -S $(cat ./package-lists/package-list.arch)
@@ -59,13 +59,13 @@ function installPackages {
         echo -e "  ${GREEN}done${RESET}"
 
         if [ $(ls ./package-lists | grep -E "package-list.+.arch") ]; then
-          echo "\nAdditional packages were found for the following desktop environments:"
+          echo -e "\nAdditional packages were found for the following desktop environments:"
           options=()
           if [ -f ./package-lists/package-list.gnome.arch ]; then
             options+="gnome"
           fi
-          echo "${options[@]}"
-          read -p "\nSelect desktop environment:(leave blank to skip) " de
+          echo -e "${options[@]}\n"
+          read -p "Select desktop environment:(leave blank to skip) " de
           if [[ $de != "" ]]; then
             echo "\nInstalling extra packages for ${de}"
             sudo yay -S $(cat ./package-lists/package-list.$de.arch)
