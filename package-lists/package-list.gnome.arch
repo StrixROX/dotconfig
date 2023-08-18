@@ -10,3 +10,5 @@ gthumb
 flatpak
 flatpak-builder
 gnome-software
+nautilus-open-any-terminal
+dconf-editor
