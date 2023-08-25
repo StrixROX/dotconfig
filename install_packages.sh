@@ -68,7 +68,7 @@ function installPackages {
           read -p "Select desktop environment:(leave blank to skip) " de
           if [[ $de != "" ]]; then
             echo "\nInstalling extra packages for ${de}"
-            sudo yay -S $(cat ./package-lists/package-list.$de.arch)
+            yay -S $(cat ./package-lists/package-list.$de.arch)
             echo -e "  ${GREEN}done${RESET}"
           fi
         fi
