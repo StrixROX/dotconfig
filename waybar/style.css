@@ -1,0 +1,87 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: SourceCodePro, NotoSans, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/* waybar global */
+.modules-left {
+    margin-left: 10px;
+}
+.modules-right {
+    margin-right: 10px;
+}
+window#waybar {
+    background: transparent;
+    color: white;
+}
+
+/* icon */
+#custom-icon {
+    margin-bottom: 8px;
+    padding: 12px 18px;
+    background-image: url("/home/strix/.config/waybar/assets/arch_icon.png");
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #c5bef3;
+    border-radius: 10px;
+}
+
+/* workspaces */
+#workspaces {
+    margin: 0 3px;
+    margin-bottom: 8px;
+    padding: 0 10px;
+    padding-bottom: 2px;
+    background: #1f1f1f;
+    border-radius: 10px;
+}
+#workspaces button {
+    padding: 2px 5px;
+    background: #1f1f1f;
+    color: #565656;
+    border: none;
+    border-radius: 0;
+    transition: background 0s;
+}
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: #343434;
+    color: #757575;
+}
+#workspaces button.active {
+    color: #bebebe;
+}
+
+/* clock */
+#clock {
+    margin-bottom: 8px;
+    padding: 0 30px;
+    padding-bottom: 2px;
+    background: #1f1f1f;
+    color: #bebebe;
+    border-radius: 50px;
+}
+
+/* modules-right */
+.modules-right {
+    margin-bottom: 8px;
+    padding: 0 10px;
+    background: #1f1f1f;
+    color: #bebebe;
+    border-radius: 10px;
+}
+
+.modules-right *{
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+/* seperator */
+#custom-separator {
+    color: #5a5a5a;
+    margin: 0 5px;
+}
