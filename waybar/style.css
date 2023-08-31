@@ -20,7 +20,7 @@ window#waybar {
 /* icon */
 #custom-icon {
     margin-bottom: 8px;
-    padding: 12px 18px;
+    padding: 8px 16px;
     background-image: url("/home/strix/.config/waybar/assets/arch_icon.png");
     background-size: 60%;
     background-position: center;
