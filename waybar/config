@@ -3,11 +3,12 @@
     "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 42, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
+    // "exclusive": false,
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["custom/icon", "hyprland/workspaces"],
+    "modules-left": ["custom/icon", "hyprland/workspaces", "custom/music"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "network", "custom/separator", "wireplumber", "custom/separator", "battery"],
+    "modules-right": ["tray", "network", "custom/separator", "wireplumber", "custom/separator", "backlight", "custom/separator", "battery"],
     // Modules configuration
     "custom/separator": {
         "format": "|",
@@ -18,6 +19,18 @@
         "format": " ",
         "interval": "once",
         "tooltip": false
+    },
+    "custom/music": {
+        "format": "{}",
+        "interval": 1,
+        "tooltip": false,
+        "exec": "echo \"$(playerctl metadata title)  /  $(playerctl metadata artist)\"",
+        "exec-if": "~/.config/waybar/helpers/is_playing.sh"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": [""]
     },
     "tray": {
         "icon-size": 21,
@@ -80,7 +93,7 @@
         "format-ethernet": "  {ipaddr}/{cidr}",
         "format-linked": "  {ifname} (No IP)",
         "format-disconnected": "⚠  Disconnected",
-        "format-alt": "({signalStrength}%)  UP {bandwidthUpBytes}  DN {bandwidthDownBytes}"
+        "format-alt": "({signalStrength}%)  DN {bandwidthDownBytes}  UP {bandwidthUpBytes}"
     },
     "wireplumber": {
         "scroll-step": 1,

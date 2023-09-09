@@ -20,23 +20,22 @@ window#waybar {
 /* icon */
 #custom-icon {
     margin-bottom: 8px;
-    padding: 8px 16px;
+    padding: 8px 14px;
     background-image: url("/home/strix/.config/waybar/assets/arch_icon.png");
     background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #c5bef3;
-    border-radius: 10px;
+    border-radius: 50px;
 }
 
 /* workspaces */
 #workspaces {
     margin: 0 3px;
     margin-bottom: 8px;
-    padding: 0 10px;
-    padding-bottom: 2px;
+    padding: 0 15px;
     background: #1f1f1f;
-    border-radius: 10px;
+    border-radius: 50px;
 }
 #workspaces button {
     padding: 2px 5px;
@@ -72,7 +71,7 @@ window#waybar {
     padding: 0 10px;
     background: #1f1f1f;
     color: #bebebe;
-    border-radius: 10px;
+    border-radius: 50px;
 }
 
 .modules-right *{
@@ -84,4 +83,15 @@ window#waybar {
 #custom-separator {
     color: #5a5a5a;
     margin: 0 5px;
+}
+
+/* music */
+#custom-music {
+    margin: 0 3px;
+    margin-bottom: 8px;
+    padding: 0 30px;
+    padding-bottom: 2px;
+    color: #bebebe;
+    background: #1f1f1f;
+    border-radius: 50px;
 }
