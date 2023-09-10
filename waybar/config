@@ -24,8 +24,8 @@
         "format": "{}",
         "interval": 1,
         "tooltip": false,
-        "exec": "echo \"$(playerctl metadata title)  /  $(playerctl metadata artist)\"",
-        "exec-if": "~/.config/waybar/helpers/is_playing.sh"
+        "exec": "echo \"$(~/.config/waybar/helpers/music.sh title)  /  $(~/.config/waybar/helpers/music.sh artist)\"",
+        "exec-if": "~/.config/waybar/helpers/music.sh status"
     },
     "backlight": {
         "device": "intel_backlight",

@@ -22,7 +22,7 @@ window#waybar {
     margin-bottom: 8px;
     padding: 8px 14px;
     background-image: url("/home/strix/.config/waybar/assets/arch_icon.png");
-    background-size: 60%;
+    background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #c5bef3;
